@@ -25,26 +25,26 @@ base.title("CHAT_BOT ver. 1.0")
 base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
-#Create Chat window
+#Создаем окно
 ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
 
 ChatLog.config(state=DISABLED)
 
-#Bind scrollbar to Chat window
+#Добавим скролл
 scrollbar = Scrollbar(base, command=ChatLog.yview, cursor="heart")
 ChatLog['yscrollcommand'] = scrollbar.set
 
-#Create Button to send message
+#Кнопка для отправки сообщений
 SendButton = Button(base, font=("Verdana",9,'bold'), text="ОТПРАВИТЬ", width="13", height=5,
                     bd=0, bg="#32de97", activebackground="#3c9d9b",fg='#ffffff',
                     command= send )
 
-#Create the box to enter message
+#Поле ввода сообщения
 EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 #EntryBox.bind("<Return>", send)
 
 
-#Place all components on the screen
+#Размещение всех компонентов интерфейса
 scrollbar.place(x=376,y=6, height=386)
 ChatLog.place(x=6,y=6, height=386, width=370)
 EntryBox.place(x=128, y=401, height=90, width=265)
